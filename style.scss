@@ -1,0 +1,132 @@
+//Variables
+$color-primary: #147A7A;
+$color-secondary: #24CCCC;
+$color-bg:#f2f2f2;
+
+body{
+    background-color: $color-bg;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.serch-body{
+    display: flex;
+
+
+}
+.serch-input{
+    width: 60%;
+    height: 2em;
+    border-radius: 25px;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 3em;
+    border: 10px solid $color-secondary;
+    padding-left: 20px;
+}
+
+
+.btn-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+
+.btn{
+    border-radius: 25px;
+    background-color: $color-secondary;
+    padding: 8px;
+    font-size: 0.9rem;
+    margin: 1rem;
+
+}
+
+.btn:hover{
+    background-color: #04ebb9;
+}
+
+//FONDO DEL MODAL
+.modal-bg-add-prop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #032b3ba1;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+
+}
+
+//FONDO DEL MODAL DESHABILITADO
+.modal-bg-add-prop-none{
+    display: none;
+}
+
+
+.modal-body-add-prop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.modal-container-add-prop{
+    width: 315px;
+    height: 310px;
+    background-color: $color-primary;
+    color: #e7e7dd;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+        input{
+        width: 275px;
+        border-radius: 15px;
+    }
+    label{
+        margin-top: 5px;
+    }
+    h2{
+        text-align: center;
+        color: #fff;
+    }
+}
+
+.jobs-card{
+    width: 315px;
+    height: 200px;
+    background-color: $color-primary;
+    color: #e7e7dd;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    .sub-card{
+        display: flex;
+        justify-content: space-between;
+    }
+    .card-btns{
+        display: flex;
+        justify-content: flex-end;
+        button {
+            background: none;
+            border: 0;
+            color: inherit;
+            line-height: normal;
+            overflow: visible;
+            margin: 3px;
+            font-size: 1.2rem;
+        }
+        button:hover{
+            color: $color-secondary;
+        }
+
+        
+    }
+}

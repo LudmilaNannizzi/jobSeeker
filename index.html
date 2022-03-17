@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e366aa092a.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="serch-body">
+            <input type="text" class="serch-input" placeholder= "Redes" name="search" >
+        </div>
+    </header>
+    <main>
+        <div class="btn-main">
+            <button class="btn" id="btn-add">
+                <i class="fa-regular fa-square-plus"></i>  Agregar 
+            </button>
+        </div>
+        <!--MODAL AGREGAR-->
+        <div class="modal-bg-add-prop-none" id="modal-bg-add-prop">
+            <div class="modal-container-add-prop">
+                <h2>Agregar propuesta</h2>
+                <div class="modal-body-add-prop">
+                    <label for="">Puesto</label>
+                        <input type="text" id="puesto-agregar">
+                    <label for="">Emprea</label>
+                        <input type="text" id="empresa-agregar">
+                    <label for="">Tags</label>
+                        <input type="text" id="tags-agregar">
+                    <label for="">Fecha</label>    
+                    <input type="date" id="fecha-agregar">
+                    <input type="hidden" id="id-agregar">
+                </div>  
+                <button class="btn" id="btn-save-add">
+                    <i class="fa-regular fa-circle-check"></i> 
+                </button>  
+            </div>
+        </div>
+        <!--MODAL EDITAR-->
+        <div class="modal-bg-add-prop-none" id="modal-bg-edit-prop">
+            <div class="modal-container-add-prop">
+                <h2>Editar propuesta</h2>
+                <div class="modal-body-edit-prop">
+                    <label for="">Puesto</label>
+                        <input type="text" id="puesto-editar">
+                    <label for="">Emprea</label>
+                        <input type="text" id="emprea-editar">
+                    <label for="">Tags</label>
+                        <input type="text" id="tags-editar">
+                    <label for="">Fecha</label>    
+                    <input type="date" id="fecha-editar">
+                    <input type="hidden" id="id-editar">
+                </div>  
+                <button class="btn" id="btn-save-add">
+                    <i class="fa-regular fa-circle-check"></i> 
+                </button>  
+            </div>
+        </div>
+        <!--CARD
+        <div class="jobs-card">
+            <h2>Puesto</h2>
+            <div class="sub-card">
+                <p>empresa</p>
+                <div class="tags-card"><p>fecha</p></div>
+            </div>
+            <div>
+                <div class="tags-card"><p>Tags</p></div>
+            </div>
+            <div class="card-btns">
+                <button><i class="fa-regular fa-trash-can"></i></button>
+                <button><i class="fa-regular fa-pen-to-square"></i></button>
+            </div>
+        </div>-->
+        <div  id="main-cards">
+
+        </div>
+    </main>
+    <script src="dom.js"></script>
+    <!--<script src="app.js"></script>-->
+    <script src="app2.js"></script>
+</body>
+</html>
