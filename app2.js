@@ -30,15 +30,6 @@ const rednderCards = async()=>{
 
 rednderCards()
 
-//Mostrar info en los inputs
-/* const datosInput = async (id)=>{
-    const response = await fetch(`https://622bc30a087e0e041efbb85d.mockapi.io/api/jobs/${id}`)
-    const data = await response.json()
-
-
-
-
-} */
 
 //Enviar información a la API
 
@@ -55,6 +46,33 @@ const agregarUsuarios = async ()=>{
             fecha:$('fecha-agregar').value,
         }), 
       })
+       const  data = await response.json()
+       rednderCards()
+
+}
+
+const editarUsuarios = async ()=>{
+    const response = await fetch('https://622bc30a087e0e041efbb85d.mockapi.io/api/jobs', {
+        method: 'PUT', 
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            puesto:$('puesto-agregar').value,
+            empresa: $('empresa-agregar').value,
+            tags:$('tags-agregar').value,
+            fecha:$('fecha-agregar').value,
+        }), 
+      })
+       const  data = await response.json()
+       rednderCards()
+
+}
+
+const eliminarUsuarios = async ()=>{
+    const response = await fetch('https://622bc30a087e0e041efbb85d.mockapi.io/api/jobs', {
+        method: 'DELETE', 
+        })
        const  data = await response.json()
        rednderCards()
 
