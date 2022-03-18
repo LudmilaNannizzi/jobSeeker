@@ -15,16 +15,23 @@
             <input type="text" class="serch-input" placeholder= "Redes" name="search" >
         </div>
     </header>
-    <main>
+
         <div class="btn-main">
             <button class="btn" id="btn-add">
                 <i class="fa-regular fa-square-plus"></i>  Agregar 
             </button>
         </div>
+<main>       
         <!--MODAL AGREGAR-->
         <div class="modal-bg-add-prop-none" id="modal-bg-add-prop">
             <div class="modal-container-add-prop">
-                <h2>Agregar propuesta</h2>
+                <div class="modal-close" id="btn-save-close">
+                    <i class="fa-solid fa-xmark"></i>
+
+                </div>
+                <div class="modal-header-add-prop">
+                    <h2>Agregar propuesta </h2>
+                </div>
                 <div class="modal-body-add-prop">
                     <label for="">Puesto</label>
                         <input type="text" id="puesto-agregar">
@@ -32,6 +39,15 @@
                         <input type="text" id="empresa-agregar">
                     <label for="">Tags</label>
                         <input type="text" id="tags-agregar">
+                    <label for="">Categoría puesto</label>
+                    <select name="" id="select-agregar">
+                        <option value="select-agregar-tecnologia">Tecnología</option>
+                        <option value="select-agregar-gastronomia">Gastronomía</option>
+                        <option value="select-agregar-administracion">Administración</option>
+                        <option value="select-agregar-comercial">Comercial y ventas</option>
+                        <option value="select-agregar-educacion">Educación y formación</option>
+                        <option value="select-agregar-marketing">Marketing y comunicación</option>
+                    </select>
                     <label for="">Fecha</label>    
                     <input type="date" id="fecha-agregar">
                     <input type="hidden" id="id-agregar">
@@ -52,6 +68,14 @@
                         <input type="text" id="emprea-editar">
                     <label for="">Tags</label>
                         <input type="text" id="tags-editar">
+                        <select name="" id="select-agregar">
+                            <option value="select-agregar-tecnologia">Tecnología</option>
+                            <option value="select-agregar-gastronomia">Gastronomía</option>
+                            <option value="select-agregar-administracion">Administración</option>
+                            <option value="select-agregar-comercial">Comercial y ventas</option>
+                            <option value="select-agregar-educacion">Educación y formación</option>
+                            <option value="select-agregar-marketing">Marketing y comunicación</option>
+                        </select>    
                     <label for="">Fecha</label>    
                     <input type="date" id="fecha-editar">
                     <input type="hidden" id="id-editar">
@@ -61,9 +85,10 @@
                 </button>  
             </div>
         </div>
+        <!--CARDS-->
 
         <div  id="main-cards">
-        <!--CARD
+
         <div class="jobs-card">
             <h2>Puesto</h2>
             <div class="sub-card">
@@ -77,7 +102,53 @@
                 <button><i class="fa-regular fa-trash-can"></i></button>
                 <button><i class="fa-regular fa-pen-to-square"></i></button>
             </div>
-        </div>-->
+        </div>
+
+        <div class="jobs-card">
+            <h2>Puesto</h2>
+            <div class="sub-card">
+                <p>empresa</p>
+                <div class="tags-card"><p>fecha</p></div>
+            </div>
+            <div>
+                <div class="tags-card"><p>Tags</p></div>
+            </div>
+            <div class="card-btns">
+                <button><i class="fa-regular fa-trash-can"></i></button>
+                <button><i class="fa-regular fa-pen-to-square"></i></button>
+            </div>
+        </div>
+
+        <div class="jobs-card">
+            <h2>Puesto</h2>
+            <div class="sub-card">
+                <p>empresa</p>
+                <div class="tags-card"><p>fecha</p></div>
+            </div>
+            <div>
+                <div class="tags-card"><p>Tags</p></div>
+            </div>
+            <div class="card-btns">
+                <button><i class="fa-regular fa-trash-can"></i></button>
+                <button><i class="fa-regular fa-pen-to-square"></i></button>
+            </div>
+        </div>
+        
+        <div class="jobs-card">
+            <h2>Puesto</h2>
+            <div class="sub-card">
+                <p>empresa</p>
+                <div class="tags-card"><p>fecha</p></div>
+            </div>
+            <div>
+                <div class="tags-card"><p>Tags</p></div>
+            </div>
+            <div class="card-btns">
+                <button><i class="fa-regular fa-trash-can"></i></button>
+                <button><i class="fa-regular fa-pen-to-square"></i></button>
+            </div>
+        </div>
+        
         </div>
     </main>
     <script src="dom.js"></script>

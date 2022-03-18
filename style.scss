@@ -3,22 +3,33 @@ $color-primary: #147A7A;
 $color-secondary: #24CCCC;
 $color-bg:#f2f2f2;
 
+@mixin flex-values {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 body{
     background-color: $color-bg;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.serch-body{
+main{
+    width: 100%;
     display: flex;
+    justify-content: center;
+}
 
-
+.serch-body{
+    @include flex-values();
 }
 .serch-input{
     width: 60%;
     height: 2em;
     border-radius: 25px;
     margin: 0 auto;
-    justify-content: center;
     margin-top: 3em;
     border: 10px solid $color-secondary;
     padding-left: 20px;
@@ -26,9 +37,7 @@ body{
 
 
 .btn-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-values();
     padding: 1em;
 }
 
@@ -48,9 +57,7 @@ body{
 
 //FONDO DEL MODAL
 .modal-bg-add-prop{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-values();
     background-color: #032b3ba1;
     justify-content: center;
     align-items: center;
@@ -78,55 +85,81 @@ body{
 
 
 .modal-container-add-prop{
-    width: 315px;
-    height: 310px;
+    width: 330px;
+    height: 355px;
     background-color: $color-primary;
     color: #e7e7dd;
     border-radius: 25px;
-    justify-content: center;
-    align-items: center;
-        input{
+    @include flex-values();
+    flex-direction: column;
+    
+    input, select{
         width: 275px;
         border-radius: 15px;
     }
     label{
         margin-top: 5px;
     }
-    h2{
-        text-align: center;
-        color: #fff;
-    }
-}
-
-.jobs-card{
-    width: 315px;
-    height: 200px;
-    background-color: $color-primary;
-    color: #e7e7dd;
-    border-radius: 25px;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 20px;
-    .sub-card{
+    .modal-close{
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin-top: 30px;
+        margin-right: 30px;
     }
-    .card-btns{
+    .modal-header-add-prop{
         display: flex;
-        justify-content: flex-end;
-        button {
-            background: none;
-            border: 0;
-            color: inherit;
-            line-height: normal;
-            overflow: visible;
-            margin: 3px;
-            font-size: 1.2rem;
-        }
-        button:hover{
-            color: $color-secondary;
-        }
-
+        flex-direction: row;
+        justify-content: center;
+        //border: 1px solid yellow;
+        width: 100%;
+        height: 40px;
         
-    }
+        h2{
+            color: #e7e7dd;
+        
+        }    
+}}
+
+#main-cards{
+    display: flex;
+   flex-wrap: wrap; 
+   justify-content: space-between;  
+   width: 90%; 
+   flex-direction: row;
+   border: 1px solid red;
 }
+    .jobs-card{
+        width: 315px;
+        height: 200px;
+        background-color: $color-primary;
+        color: #e7e7dd;
+        border-radius: 25px;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 20px;
+        margin: 15px;
+        .sub-card{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card-btns{
+            display: flex;
+            justify-content: flex-end;
+            button {
+                background: none;
+                border: 0;
+                color: inherit;
+                line-height: normal;
+                overflow: visible;
+                margin: 3px;
+                font-size: 1.2rem;
+            }
+            button:hover{
+                color: $color-secondary;
+            }
+    
+            
+        }
+    }
+

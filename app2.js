@@ -1,8 +1,9 @@
+const API = 'http://localhost:5000/api/jobs'
 
 //Mostrar inforación de las tarjetas
 let info
-const rednderCards = async()=>{
-    const response = await fetch('https://622bc30a087e0e041efbb85d.mockapi.io/api/jobs')
+const renderCards = async()=>{
+    const response = await fetch(API)
     const data = await response.json()
 
     const infoCard =  data.reduce((acc, dat) => {
@@ -28,13 +29,13 @@ const rednderCards = async()=>{
     informacion = data;
 }
 
-rednderCards()
+renderCards()
 
 
 //Enviar información a la API
 
 const agregarUsuarios = async ()=>{
-    const response = await fetch('https://622bc30a087e0e041efbb85d.mockapi.io/api/jobs', {
+    const response = await fetch(API, {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
@@ -47,12 +48,12 @@ const agregarUsuarios = async ()=>{
         }), 
       })
        const  data = await response.json()
-       rednderCards()
+       renderCards()
 
 }
 
 const editarUsuarios = async ()=>{
-    const response = await fetch('https://622bc30a087e0e041efbb85d.mockapi.io/api/jobs', {
+    const response = await fetch(API, {
         method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',
@@ -65,15 +66,15 @@ const editarUsuarios = async ()=>{
         }), 
       })
        const  data = await response.json()
-       rednderCards()
+       renderCards()
 
 }
 
 const eliminarUsuarios = async ()=>{
-    const response = await fetch('https://622bc30a087e0e041efbb85d.mockapi.io/api/jobs', {
+    const response = await fetch(API, {
         method: 'DELETE', 
         })
        const  data = await response.json()
-       rednderCards()
+       renderCards()
 
 }

@@ -12,6 +12,7 @@ $('btn-save-add').addEventListener('click', () =>{
     agregarUsuarios()
 })
 
-/* $('modal-bg-add-prop').addEventListener('click', ()=>{
+
+$('btn-save-close').addEventListener('click', ()=>{
     $('modal-bg-add-prop').classList.add('modal-bg-add-prop-none')
-}) */
+})
