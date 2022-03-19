@@ -22,8 +22,12 @@ const renderCards = async()=>{
                     <div class="tags-card"><p>${dat.tags}</p></div>
                 </div>
                 <div class="card-btns">
-                    <button ><i class="fa-regular fa-trash-can" id="btn-eliminar" ></i></button>
-                    <button><i class="fa-regular fa-pen-to-square" id="btn-editar" onclick="modalEditar()"></i></button>
+                    <button>
+                    <i class="fa-regular fa-trash-can" id="btn-eliminar" ></i>
+                    </button>
+                    <button id="btn-editar" onclick="modalEditar('${dat.id}')">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    </button>
                 </div>
             </div>
       `;
@@ -53,19 +57,22 @@ const agregarUsuarios = async ()=>{
       })
        const  data = await response.json()
        renderCards()
-        console.log(data);
+       
 }
 
 const editarUsuarios = async ()=>{
-    const response = await fetch(API, {
+    const id = $('id-editar').value
+   
+    const response = await fetch(`http://localhost:5001/api/jobs/${id}`,{
         method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           jobPosition:$('puesto-agregar').value,
-            entity: $('empresa-agregar').value,
+            entity:$('empresa-agregar').value,
             tags:$('tags-agregar').value,
+            
             //fecha:$('fecha-agregar').value,
         }), 
       })
@@ -82,3 +89,14 @@ const eliminarUsuarios = async ()=>{
        renderCards()
 
 }
+
+const mostrarDatosEditados = async(id)=>{
+    const response = await fetch(`http://localhost:5001/api/jobs/${id}`)
+    const  data = await response.json()
+    $('puesto-editar').value = data.jobPosition
+    $('emprea-editar').value= data.entity
+    $('tags-editar').value = data.tags
+    $('id-editar').value = data.id
+  
+  
+  }
