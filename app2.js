@@ -61,18 +61,18 @@ const agregarUsuarios = async ()=>{
 }
 
 const editarUsuarios = async ()=>{
-    const id = $('id-editar').value
    
-    const response = await fetch(`http://localhost:5001/api/jobs/${id}`,{
+   
+    const response = await fetch(`http://localhost:5001/api/jobs`,{
         method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          jobPosition:$('puesto-agregar').value,
-            entity:$('empresa-agregar').value,
-            tags:$('tags-agregar').value,
-            
+          jobPosition:$('puesto-editar').value,
+            entity:$('emprea-editar').value,
+            tags:$('tags-editar').value,
+            id:$('id-editar').value
             //fecha:$('fecha-agregar').value,
         }), 
       })
