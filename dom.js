@@ -7,6 +7,13 @@ const modalEditar =(id)=>{
 
 }
 
+const modalEliminar =(id)=>{
+    $('modal-bg-eliminar-prop').classList.remove('modal-bg-add-prop-none')
+    $('modal-bg-eliminar-prop').classList.add('modal-body-add-prop')
+    mostrarDatosEliminados(id)
+}
+
+
 $('btn-add').addEventListener('click', () =>{
     $('modal-bg-add-prop').classList.remove('modal-bg-add-prop-none')
     $('modal-bg-add-prop').classList.add('modal-bg-add-prop')

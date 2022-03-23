@@ -1,6 +1,6 @@
 const API = 'http://localhost:5001/api/jobs'
 
-//Mostrar inforación de las tarjetas
+//Mostrar información de las tarjetas
 let info
 const renderCards = async()=>{
     const response = await fetch(API)
@@ -22,10 +22,10 @@ const renderCards = async()=>{
                     <div class="tags-card"><p>${dat.tags}</p></div>
                 </div>
                 <div class="card-btns">
-                    <button>
-                    <i class="fa-regular fa-trash-can" id="btn-eliminar" ></i>
+                    <button onclick="modalEliminar('${dat.id}')">
+                    <i class="fa-regular fa-trash-can"></i>
                     </button>
-                    <button id="btn-editar" onclick="modalEditar('${dat.id}')">
+                    <button onclick="modalEditar('${dat.id}')">
                     <i class="fa-regular fa-pen-to-square"></i>
                     </button>
                 </div>
@@ -63,7 +63,7 @@ const agregarUsuarios = async ()=>{
 const editarUsuarios = async ()=>{
    
    
-    const response = await fetch(`http://localhost:5001/api/jobs`,{
+    const response = await fetch(API,{
         method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',
@@ -81,14 +81,16 @@ const editarUsuarios = async ()=>{
 
 }
 
-const eliminarUsuarios = async ()=>{
-    const response = await fetch(API, {
+const eliminarUsuarios = async () =>{
+    const id =$('id-eliminar').value
+    const response = await fetch(`http://localhost:5001/api/jobs/${id}`, {
         method: 'DELETE', 
         })
        const  data = await response.json()
        renderCards()
 
 }
+$('btn-eliminar').addEventListener('click', eliminarUsuarios)
 
 const mostrarDatosEditados = async(id)=>{
     const response = await fetch(`http://localhost:5001/api/jobs/${id}`)
@@ -99,4 +101,7 @@ const mostrarDatosEditados = async(id)=>{
     $('id-editar').value = data.id
   
   
+  }
+  const mostrarDatosEliminados = (id)=>{
+    $('id-eliminar').value = id
   }
