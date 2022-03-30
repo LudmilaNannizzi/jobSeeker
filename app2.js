@@ -6,6 +6,7 @@ const renderCards = async()=>{
     const response = await fetch(API)
     const data = await response.json()
 
+    
     const infoCard =  data.reduce((acc, dat) => {
         return `${acc}
             <div class="jobs-card">
@@ -105,3 +106,16 @@ const mostrarDatosEditados = async(id)=>{
   const mostrarDatosEliminados = (id)=>{
     $('id-eliminar').value = id
   }
+
+  // filtros
+  const datosFiltrados = async() =>{
+    const tag = $('search-input').value
+    const response = await fetch(`http://localhost:5001/api/jobs?filter=${tag}`)
+    const  data = await response.json()
+    console.log(data);
+    renderCards()
+    
+  }
+    
+
+  $('search-input').addEventListener('keydown', datosFiltrados)

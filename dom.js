@@ -34,3 +34,5 @@ $('btn-save').addEventListener('click', ()=>{
     editarUsuarios()
     $('modal-bg-edit-prop').classList.add('modal-bg-add-prop-none')
 })
+
+
