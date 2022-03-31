@@ -2,11 +2,11 @@ const API = 'http://localhost:5001/api/jobs'
 
 //Mostrar información de las tarjetas
 let info
-const renderCards = async()=>{
-    const response = await fetch(API)
-    const data = await response.json()
-
-    
+const getInfo = async()=>{
+  const response = await fetch(API)
+  return await response.json()
+}
+  const renderHtml = (data) =>{
     const infoCard =  data.reduce((acc, dat) => {
         return `${acc}
             <div class="jobs-card">
@@ -35,7 +35,12 @@ const renderCards = async()=>{
       }, '');
            
     $('main-cards').innerHTML = infoCard;
-    informacion = data;
+   // informacion = data;
+  }
+
+const renderCards = async () =>{
+  const data = await getInfo()
+  renderHtml(data)
 }
 
 renderCards()
@@ -112,8 +117,8 @@ const mostrarDatosEditados = async(id)=>{
     const tag = $('search-input').value
     const response = await fetch(`http://localhost:5001/api/jobs?filter=${tag}`)
     const  data = await response.json()
-    console.log(data);
-    renderCards()
+   renderHtml(data)
+    
     
   }
     
