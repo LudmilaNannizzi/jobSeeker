@@ -121,6 +121,18 @@ const mostrarDatosEditados = async(id)=>{
     
     
   }
-    
+  
 
-  $('search-input').addEventListener('keydown', datosFiltrados)
+  function debounce(callback, wait) {
+    let timerId;
+    return (...args) => {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        callback(...args);
+      }, wait);
+    };
+  }
+
+  $('search-input').addEventListener('keypress', debounce(()=>{
+    datosFiltrados()
+  },500))
